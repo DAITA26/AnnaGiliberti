@@ -31,14 +31,15 @@ for d in domande:
     print(d)
     print(risposte[numeroDomanda])
     numeroDomanda += 1
-    listaCPU = sceltaPC(d)
+    sceltaCPU = sceltaPC(d)
+    listaCPU.append(sceltaCPU)
     sceltaUtente = int(input(f"La tua risposta è"))
-    listaUtente = sceltaUtente
-    if sceltaUtente == sceltaPC(d):
+    listaUtente.append (sceltaUtente)
+    if sceltaUtente == sceltaCPU:
         print("Hai risposto correttamente!")
         punteggio += 1
     else:
-        print(f"Hai risposto in modo errato! La risposta corretta era {sceltaPC(d)}")
+        print(f"Hai risposto in modo errato! La risposta corretta era {sceltaCPU}")
 
 print(f"il tuo punteggio è {punteggio}")
 
